@@ -1,1 +1,63 @@
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/work-sans";
 @import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Work Sans Variable", system-ui, sans-serif;
+
+  --color-bg: #FAF8F3;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F0EDE4;
+  --color-border: #E0DCCF;
+
+  --color-primary: #1F3A5F;
+  --color-primary-hov: #17293F;
+  --color-primary-tint: #DFE6EE;
+
+  --color-accent: #C9932F;
+  --color-accent-tint: #F3E5C4;
+
+  --color-community: #4B7A57;
+  --color-community-tint: #DEEAE1;
+
+  --color-urgent: #B8503E;
+  --color-urgent-tint: #F2DCD7;
+
+  --color-ink: #1C2430;
+  --color-ink-muted: #5A6270;
+  --color-ink-faint: #8B92A0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-primary;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+  .link-underline {
+    @apply underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-primary-hov;
+  }
+}
+
+@keyframes fill-thermometer {
+  from { width: 0; }
+}
+.fill-anim {
+  animation: fill-thermometer 1.1s ease-out;
+}
