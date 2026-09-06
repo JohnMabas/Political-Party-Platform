@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation, Link } from 'react-router-dom'
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { useStore } from '../store/Store'
 import { AuthShell } from '../components/layout/AuthShell'
 

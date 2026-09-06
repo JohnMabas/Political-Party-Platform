@@ -2,7 +2,7 @@
 // real API; here they read from the shared in-memory store. Components should
 // call these rather than touching the store data directly when possible.
 
-import { useStore } from './Store'
+import { useStore } from '../store/Store'
 
 export function useFundraising() {
   const s = useStore()

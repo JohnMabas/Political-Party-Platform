@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useStore } from '../../store/Store'
-import { Card } from '../../components/ui'
 import { fmtDateShort } from '../../utils/format'
 
 export default function NewsIndex() {

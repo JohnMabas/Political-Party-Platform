@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StoreProvider } from './store/Store'
-import { PublicLayout } from './components/layout/PublicLayout'
+import { PublicLayout } from './layouts/PublicLayout'
 import { AuthLayout } from './layouts/AuthLayout'
 import { RoleSwitcher } from './components/layout/AuthShell'
 
@@ -26,6 +26,7 @@ import Careers from './pages/public/Careers'
 import Contact from './pages/public/Contact'
 import Compliance from './pages/public/Compliance'
 import Login from './pages/public/Login'
+import VolunteerSignup from './pages/public/VolunteerSignup'
 
 import VolunteerDashboard from './pages/volunteer/Dashboard'
 import MyTasks from './pages/volunteer/MyTasks'
@@ -66,6 +67,7 @@ export default function App() {
             <Route path="/candidates" element={<CandidatesIndex />} />
             <Route path="/candidates/:slug" element={<CandidateProfile />} />
             <Route path="/take-action" element={<TakeAction />} />
+            <Route path="/volunteer" element={<VolunteerSignup />} />
             <Route path="/events" element={<EventsIndex />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/news" element={<NewsIndex />} />

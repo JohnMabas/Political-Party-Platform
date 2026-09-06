@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useStore } from '../../store/Store'
 import { Card, StatusBadge } from '../../components/ui'
 import { useEvents } from '../../services/campaign'
-import { fmtDateShort, fmtTime } from '../../utils/format'
-
-const TYPES = ['All', 'Canvass', 'Phone Bank', 'Town Hall', 'Rally', 'Forum']
+import { fmtTime } from '../../utils/format'
 
 export default function EventsIndex() {
   const { upcoming } = useEvents()

@@ -1,6 +1,6 @@
 // Shared UI primitives for the platform.
 
-export function StatusBadge({ status, tone }) {
+export function StatusBadge({ status, tone: _tone }) {
   const tones = {
     // volunteer / shift statuses
     'Active': { bg: 'bg-community-tint text-community', icon: '●' },
@@ -14,6 +14,7 @@ export function StatusBadge({ status, tone }) {
     'Non-donor': { bg: 'bg-surface-2 text-ink-muted', icon: '●' },
     'Completed': { bg: 'bg-community-tint text-community', icon: '✓' },
     'Paid': { bg: 'bg-community-tint text-community', icon: '✓' },
+    'Full': { bg: 'bg-urgent-tint text-urgent', icon: '!' },
     // canvass results
     'Supporter': { bg: 'bg-community-tint text-community', icon: '✓' },
     'Undecided': { bg: 'bg-accent-tint text-accent', icon: '?' },

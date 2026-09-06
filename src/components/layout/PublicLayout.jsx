@@ -15,7 +15,7 @@ function Seal({ className = 'w-10 h-10' }) {
 }
 
 export function PublicHeader() {
-  const { currentUser, setCurrentUser } = useStore()
+  const { currentUser } = useStore()
   const [open, setOpen] = useState(false)
   const nav = [
     { to: '/platform', label: 'Our Platform' },
@@ -101,10 +101,10 @@ export function CountdownStrip({ kind = 'election' }) {
         {kind === 'election' ? (
           <p className="text-ink">
             <strong className="text-urgent">{days} days until Election Day.</strong>{' '}
-            <a href="#take-action" className="underline underline-offset-2 text-primary font-medium">Find a way to help</a>
+            <Link to="/take-action" className="underline underline-offset-2 text-primary font-medium">Find a way to help</Link>
           </p>
         ) : (
-          <p className="text-ink"><strong className="text-urgent">Town hall this Thursday.</strong> <a href="/events" className="underline underline-offset-2 text-primary font-medium">RSVP now</a></p>
+          <p className="text-ink"><strong className="text-urgent">Town hall this Thursday.</strong> <Link to="/events" className="underline underline-offset-2 text-primary font-medium">RSVP now</Link></p>
         )}
       </div>
     </div>

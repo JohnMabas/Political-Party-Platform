@@ -2,7 +2,7 @@
 // In production each of these would resolve to service/API calls; here it is
 // in-memory so that one role's action is reflected across every other view.
 
-const today = new Date()
+
 
 export const ELECTION_DATE = new Date('2026-11-03T00:00:00')
 export const CYCLE_GOAL = 250000

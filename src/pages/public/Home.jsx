@@ -4,7 +4,7 @@ import { Card, StatusBadge, Thermometer } from '../../components/ui'
 import { fmtDateShort, fmtTime, daysUntil } from '../../utils/format'
 
 export default function Home() {
-  const { fundraisingTotal, progressPct, activeVolunteers, seed, eventsData } = useStore()
+  const { fundraisingTotal, activeVolunteers, seed, eventsData } = useStore()
   const days = daysUntil('2026-11-03')
   const nextEvents = eventsData
     .filter((e) => new Date(e.date) > new Date())

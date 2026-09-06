@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useStore } from '../../store/Store'
 import { Card, StatusBadge } from '../../components/ui'
 import { fmtDateShort, fmtTime } from '../../utils/format'
@@ -7,7 +7,6 @@ import { fmtDateShort, fmtTime } from '../../utils/format'
 export default function EventDetail() {
   const { id } = useParams()
   const { eventsData, rsvpEvent, currentUser } = useStore()
-  const navigate = useNavigate()
   const [rsvpData, setRsvpData] = useState({ name: '', email: '' })
   const [done, setDone] = useState(false)
   const event = eventsData.find((e) => String(e.id) === String(id))

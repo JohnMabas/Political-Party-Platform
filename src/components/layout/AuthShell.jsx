@@ -5,17 +5,12 @@ import { Avatar } from '../ui'
 
 // Shared shell for the authenticated Volunteer Portal and Staff Dashboard:
 // fixed collapsible left sidebar + top bar with search, notifications, account menu.
-export function AuthShell({ nav, brand, userRole, children, topRight }) {
+export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) {
   const { currentUser, setCurrentUser, announcements } = useStore()
   const [collapsed, setCollapsed] = useState(false)
   const [search, setSearch] = useState('')
   const [notifOpen, setNotifOpen] = useState(false)
   const navigate = useNavigate()
-
-  const logout = () => {
-    setCurrentUser({ role: 'visitor', name: 'Guest' })
-    navigate('/')
-  }
 
   const switchRole = (role) => {
     const map = {

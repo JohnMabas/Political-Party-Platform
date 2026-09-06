@@ -12,7 +12,7 @@ const FUNDS = [
 ]
 
 export default function Donate() {
-  const { donate, fundraisingTotal, progressPct, seed } = useStore()
+  const { donate, fundraisingTotal, seed } = useStore()
   const navigate = useNavigate()
 
   const [amount, setAmount] = useState(25)

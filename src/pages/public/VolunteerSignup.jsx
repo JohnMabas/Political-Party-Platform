@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useStore } from '../../store/Store'
 import { Card } from '../../components/ui'
 import { daysUntil } from '../../utils/format'
@@ -20,8 +20,7 @@ const SHIFTS = [
 ]
 
 export default function VolunteerSignup() {
-  const { volunteerSignup, currentUser, setCurrentUser } = useStore()
-  const navigate = useNavigate()
+  const { volunteerSignup, setCurrentUser } = useStore()
   const [form, setForm] = useState({ name: '', email: '', district: '', zip: '' })
   const [interest, setInterest] = useState('canvass')
   const [shift, setShift] = useState('')
