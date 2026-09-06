@@ -1,53 +1,62 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StoreProvider } from './store/Store'
 import { PublicLayout } from './layouts/PublicLayout'
 import { AuthLayout } from './layouts/AuthLayout'
 import { RoleSwitcher } from './components/layout/AuthShell'
 
-import Home from './pages/public/Home'
-import About from './pages/public/About'
-import Platform from './pages/public/Platform'
-import IssueDetail from './pages/public/IssueDetail'
-import CandidatesIndex from './pages/public/CandidatesIndex'
-import CandidateProfile from './pages/public/CandidateProfile'
-import TakeAction from './pages/public/TakeAction'
-import EventsIndex from './pages/public/EventsIndex'
-import EventDetail from './pages/public/EventDetail'
-import NewsIndex from './pages/public/NewsIndex'
-import NewsDetail from './pages/public/NewsDetail'
-import Endorsements from './pages/public/Endorsements'
-import Donate from './pages/public/Donate'
-import DonateReceipt from './pages/public/DonateReceipt'
-import StorePage from './pages/public/StorePage'
-import VoterResources from './pages/public/VoterResources'
-import Join from './pages/public/Join'
-import PressKit from './pages/public/PressKit'
-import Careers from './pages/public/Careers'
-import Contact from './pages/public/Contact'
-import Compliance from './pages/public/Compliance'
-import Login from './pages/public/Login'
-import VolunteerSignup from './pages/public/VolunteerSignup'
+const Home = lazy(() => import('./pages/public/Home'))
+const About = lazy(() => import('./pages/public/About'))
+const Platform = lazy(() => import('./pages/public/Platform'))
+const IssueDetail = lazy(() => import('./pages/public/IssueDetail'))
+const CandidatesIndex = lazy(() => import('./pages/public/CandidatesIndex'))
+const CandidateProfile = lazy(() => import('./pages/public/CandidateProfile'))
+const TakeAction = lazy(() => import('./pages/public/TakeAction'))
+const EventsIndex = lazy(() => import('./pages/public/EventsIndex'))
+const EventDetail = lazy(() => import('./pages/public/EventDetail'))
+const NewsIndex = lazy(() => import('./pages/public/NewsIndex'))
+const NewsDetail = lazy(() => import('./pages/public/NewsDetail'))
+const Endorsements = lazy(() => import('./pages/public/Endorsements'))
+const Donate = lazy(() => import('./pages/public/Donate'))
+const DonateReceipt = lazy(() => import('./pages/public/DonateReceipt'))
+const StorePage = lazy(() => import('./pages/public/StorePage'))
+const VoterResources = lazy(() => import('./pages/public/VoterResources'))
+const Join = lazy(() => import('./pages/public/Join'))
+const PressKit = lazy(() => import('./pages/public/PressKit'))
+const Careers = lazy(() => import('./pages/public/Careers'))
+const Contact = lazy(() => import('./pages/public/Contact'))
+const Compliance = lazy(() => import('./pages/public/Compliance'))
+const Login = lazy(() => import('./pages/public/Login'))
+const VolunteerSignup = lazy(() => import('./pages/public/VolunteerSignup'))
 
-import VolunteerDashboard from './pages/volunteer/Dashboard'
-import MyTasks from './pages/volunteer/MyTasks'
-import MyEvents from './pages/volunteer/MyEvents'
-import MyDonations from './pages/volunteer/MyDonations'
-import Referrals from './pages/volunteer/Referrals'
-import MyTeam from './pages/volunteer/MyTeam'
-import Messages from './pages/volunteer/Messages'
-import VolunteerSettings from './pages/volunteer/Settings'
+const VolunteerDashboard = lazy(() => import('./pages/volunteer/Dashboard'))
+const MyTasks = lazy(() => import('./pages/volunteer/MyTasks'))
+const MyEvents = lazy(() => import('./pages/volunteer/MyEvents'))
+const MyDonations = lazy(() => import('./pages/volunteer/MyDonations'))
+const Referrals = lazy(() => import('./pages/volunteer/Referrals'))
+const MyTeam = lazy(() => import('./pages/volunteer/MyTeam'))
+const Messages = lazy(() => import('./pages/volunteer/Messages'))
+const VolunteerSettings = lazy(() => import('./pages/volunteer/Settings'))
 
-import StaffOverview from './pages/staff/Overview'
-import SupporterDatabase from './pages/staff/SupporterDatabase'
-import Canvassing from './pages/staff/Canvassing'
-import PhoneBank from './pages/staff/PhoneBank'
-import EventsManagement from './pages/staff/EventsManagement'
-import Fundraising from './pages/staff/Fundraising'
-import Outreach from './pages/staff/Outreach'
-import VolunteerManagement from './pages/staff/VolunteerManagement'
-import ComplianceReporting from './pages/staff/ComplianceReporting'
-import SiteContent from './pages/staff/SiteContent'
-import StaffPermissions from './pages/staff/StaffPermissions'
+const StaffOverview = lazy(() => import('./pages/staff/Overview'))
+const SupporterDatabase = lazy(() => import('./pages/staff/SupporterDatabase'))
+const Canvassing = lazy(() => import('./pages/staff/Canvassing'))
+const PhoneBank = lazy(() => import('./pages/staff/PhoneBank'))
+const EventsManagement = lazy(() => import('./pages/staff/EventsManagement'))
+const Fundraising = lazy(() => import('./pages/staff/Fundraising'))
+const Outreach = lazy(() => import('./pages/staff/Outreach'))
+const VolunteerManagement = lazy(() => import('./pages/staff/VolunteerManagement'))
+const ComplianceReporting = lazy(() => import('./pages/staff/ComplianceReporting'))
+const SiteContent = lazy(() => import('./pages/staff/SiteContent'))
+const StaffPermissions = lazy(() => import('./pages/staff/StaffPermissions'))
+
+function RouteFallback() {
+  return (
+    <div className="flex min-h-[40vh] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-label="Loading" />
+    </div>
+  )
+}
 
 function AuthenticatedLayout() {
   return <AuthLayout />
@@ -57,7 +66,8 @@ export default function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
-        <Routes>
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
           {/* Public site */}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
@@ -109,6 +119,7 @@ export default function App() {
             <Route path="/staff/permissions" element={<StaffPermissions />} />
           </Route>
         </Routes>
+        </Suspense>
         <RoleSwitcher />
       </BrowserRouter>
     </StoreProvider>

@@ -4,11 +4,10 @@ import { fmtDateShort, fmtMoney, daysUntil } from '../../utils/format'
 
 export default function ComplianceReporting() {
   const { donationsData, fundraisingTotal, seed, peopleData } = useStore()
-  const { filingDeadlines } = useStore()
 
   const totalContributions = donationsData.reduce((s, d) => s + d.amount, 0)
 
-  const deadlines = [...filingDeadlines].map((fd) => ({
+  const deadlines = [...seed.filingDeadlines].map((fd) => ({
     ...fd,
     days: daysUntil(fd.date),
     status: daysUntil(fd.date) <= 3 ? 'Due soon' : daysUntil(fd.date) <= 14 ? 'Upcoming' : 'On track',

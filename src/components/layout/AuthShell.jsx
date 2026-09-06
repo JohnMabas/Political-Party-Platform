@@ -10,6 +10,7 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
   const [collapsed, setCollapsed] = useState(false)
   const [search, setSearch] = useState('')
   const [notifOpen, setNotifOpen] = useState(false)
+  const [accountOpen, setAccountOpen] = useState(false)
   const navigate = useNavigate()
 
   const switchRole = (role) => {
@@ -101,14 +102,28 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
 
           {/* Account menu */}
           <div className="relative">
-            <button type="button" onClick={() => switchRole(userRole === 'volunteer' ? 'volunteer' : userRole)} aria-label="Account"
+            <button type="button" onClick={() => setAccountOpen(!accountOpen)} aria-expanded={accountOpen} aria-label="Account menu"
               className="flex items-center gap-2 rounded-sm p-1 focus-visible:outline-2">
               <Avatar name={currentUser?.name || 'User'} size="w-8 h-8" />
             </button>
-            {/* Account dropdown with dev role switcher */}
-            <div className="absolute right-0 top-full mt-2 w-56 rounded border border-border bg-surface p-1 shadow-lg hidden" id="account-menu">
-              {/* placeholder - role switcher lives in RoleSwitcher */}
-            </div>
+            {accountOpen && (
+              <div className="absolute right-0 top-full mt-2 w-56 rounded border border-border bg-surface p-1 shadow-lg">
+                <div className="px-3 py-2 border-b border-border">
+                  <p className="text-sm font-semibold text-ink">{currentUser?.name || 'Guest'}</p>
+                  <p className="text-xs text-ink-muted">{currentUser?.role === 'volunteer' ? 'Supporter / Volunteer' : currentUser?.role === 'admin' ? 'Staff / Admin' : currentUser?.role || 'Visitor'}</p>
+                </div>
+                <button type="button" onClick={() => { switchRole('volunteer'); setAccountOpen(false) }}
+                  className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Volunteer portal</button>
+                <button type="button" onClick={() => { switchRole('organizer'); setAccountOpen(false) }}
+                  className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Staff dashboard</button>
+                <div className="border-t border-border mt-1 pt-1">
+                  <button type="button" onClick={() => { setCurrentUser({ role: 'visitor', name: 'Guest' }); navigate('/'); setAccountOpen(false) }}
+                    className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Return to public site</button>
+                  <button type="button" onClick={() => { setCurrentUser({ role: 'visitor', name: 'Guest' }); navigate('/login'); setAccountOpen(false) }}
+                    className="w-full text-left rounded-sm px-3 py-2 text-sm text-urgent hover:bg-urgent-tint">Sign out</button>
+                </div>
+              </div>
+            )}
           </div>
         </header>
 
