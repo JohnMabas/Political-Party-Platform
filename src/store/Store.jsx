@@ -8,8 +8,8 @@ const StoreContext = createContext(null)
 export const DEMO_USERS = {
   visitor: { role: 'visitor', name: 'Guest' },
   volunteer: { id: 1, role: 'volunteer', name: 'Amina Yusuf', email: 'amina.yusuf@example.com' },
-  organizer: { id: 3, role: 'organizer', name: 'Alicia Tran', email: 'alicia@commonground.party' },
-  admin: { id: 1, role: 'admin', name: 'Camille North', email: 'camille@commonground.party' },
+  organizer: { id: 3, role: 'organizer', name: 'Aisha Suleiman', email: 'aisha@fup.ng' },
+  admin: { id: 1, role: 'admin', name: 'Adaeze Okonkwo', email: 'adaeze@fup.ng' },
 }
 
 export function StoreProvider({ children }) {
@@ -28,12 +28,12 @@ export function StoreProvider({ children }) {
   ])
   const [canvassData, setCanvassData] = useState(seed.canvassResults)
   const [assignments, setAssignments] = useState([
-    { id: 1, personId: 1, title: 'Riverside Turf 4 — Elm St & 2nd Ave', type: 'canvass', date: '2026-09-19', status: 'assigned' },
-    { id: 2, personId: 7, title: 'Evening phone bank — early voters', type: 'phone', date: '2026-09-28', status: 'assigned' },
+    { id: 1, personId: 1, title: 'Lagos Island Zone 4 — Marina ward', type: 'canvass', date: '2026-09-19', status: 'assigned' },
+    { id: 2, personId: 7, title: 'Evening phone bank — PVC mobilization', type: 'phone', date: '2026-09-28', status: 'assigned' },
   ])
   const [announcements, setAnnouncements] = useState([
-    { id: 1, from: 'Alicia Tran', title: 'Thanks for a great Saturday', body: 'We knocked 1,900 doors yesterday. The Riverside team broke a chapter record — great work.', date: '2026-09-07' },
-    { id: 2, from: 'Campaign HQ', title: 'Early voting doors open in two weeks', body: 'Ballots go out September 20. Pick up a phone-bank or canvass shift this week to help.', date: '2026-09-06' },
+    { id: 1, from: 'Aisha Suleiman', title: 'Thanks for a great Saturday', body: 'We visited 1,900 homes yesterday. The Lagos Island team broke a branch record — great work.', date: '2026-09-07' },
+    { id: 2, from: 'FUP National Secretariat', title: 'PVC mobilization opens in two weeks', body: 'Our PVC drive takes off this month. Pick up a phone-bank or canvass shift this week to help.', date: '2026-09-06' },
   ])
   const [checkins, setCheckins] = useState([]) // {eventId, personId, time}
 

@@ -25,13 +25,17 @@ export default function CandidateProfile() {
         <div className="container-site py-12">
           <Link to="/candidates" className="text-sm text-white/70 hover:text-white">← All candidates</Link>
           <div className="mt-6 flex flex-col sm:flex-row items-start gap-6">
-            <div aria-hidden="true" className="flex h-24 w-24 items-center justify-center rounded-full bg-white/15 text-2xl font-bold text-white">{c.photo}</div>
+            <img
+              src={c.photo}
+              alt={`Portrait of ${c.name}`}
+              className="h-40 w-32 flex-shrink-0 rounded-2xl shadow-md ring-1 ring-white/20 object-cover object-top"
+            />
             <div>
               <p className="font-serif text-lg text-white/70 italic">{c.race}</p>
               <h1 className="mt-1 font-serif text-3xl sm:text-4xl font-bold text-white">{c.name}</h1>
               <p className="mt-2 max-w-2xl text-white/75">{c.tagline}</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <Link to="/donate" className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Donate to this race</Link>
+                <Link to="/volunteer" className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Volunteer with us</Link>
                 <Link to={`/events`} className="inline-flex items-center border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10 rounded-sm">Find an event</Link>
               </div>
             </div>

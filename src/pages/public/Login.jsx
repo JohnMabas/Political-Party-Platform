@@ -13,8 +13,8 @@ export default function Login() {
   const demoLogin = (role) => {
     const maps = {
       supporter: { id: 1, role: 'volunteer', name: 'Amina Yusuf', email: 'amina.yusuf@example.com' },
-      organizer: { id: 3, role: 'organizer', name: 'Alicia Tran', email: 'alicia@commonground.party' },
-      admin: { id: 1, role: 'admin', name: 'Camille North', email: 'camille@commonground.party' },
+      organizer: { id: 3, role: 'organizer', name: 'Aisha Suleiman', email: 'aisha@fup.ng' },
+      admin: { id: 1, role: 'admin', name: 'Adaeze Okonkwo', email: 'adaeze@fup.ng' },
     }
     const u = maps[role]
     setCurrentUser(u)
@@ -58,7 +58,7 @@ export default function Login() {
           <div>
             <label htmlFor="login-email" className="mb-1 block text-sm font-medium text-ink">Email</label>
             <input id="login-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder={tab === 'supporter' ? 'you@example.com' : 'name@commonground.demo'}
+              placeholder={tab === 'supporter' ? 'you@example.com' : 'name@fup.ng'}
               className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
           </div>
           <div>
@@ -80,11 +80,11 @@ export default function Login() {
             </button>
             <button type="button" onClick={() => demoLogin('organizer')}
               className="text-left rounded-sm border border-border bg-surface-2 px-3 py-2 text-sm text-ink hover:border-primary/40">
-              <span className="font-semibold text-ink">Field Organizer</span> <span className="text-ink-muted">— enter as organizer Alicia Tran</span>
+              <span className="font-semibold text-ink">Field Organizer</span> <span className="text-ink-muted">— enter as organizer Aisha Suleiman</span>
             </button>
             <button type="button" onClick={() => demoLogin('admin')}
               className="text-left rounded-sm border border-border bg-surface-2 px-3 py-2 text-sm text-ink hover:border-primary/40">
-              <span className="font-semibold text-ink">Staff / Admin</span> <span className="text-ink-muted">— enter as campaign manager Camille North</span>
+              <span className="font-semibold text-ink">Staff / Admin</span> <span className="text-ink-muted">— enter as campaign manager Adaeze Okonkwo</span>
             </button>
           </div>
         </div>

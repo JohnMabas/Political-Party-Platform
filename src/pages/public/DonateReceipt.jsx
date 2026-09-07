@@ -8,7 +8,7 @@ export default function DonateReceipt() {
   const { donationId, amount, recurring, name } = location.state || {}
   const donation = donationsData.find((d) => d.id === donationId)
 
-  const receiptNo = `CGP-${String(donationId || 0).padStart(5, '0')}`
+  const receiptNo = `FUP-${String(donationId || 0).padStart(5, '0')}`
 
   return (
     <div>
@@ -34,12 +34,12 @@ export default function DonateReceipt() {
             <div className="flex justify-between px-6 py-3"><dt className="text-ink-muted">Fund</dt><dd className="text-ink">{donation?.fund || 'General Campaign Fund'}</dd></div>
             <div className="flex justify-between px-6 py-3"><dt className="text-ink-muted">Contributor</dt><dd className="text-ink">{name || donation?.name || 'You'}</dd></div>
             <div className="flex justify-between px-6 py-3"><dt className="text-ink-muted">Date</dt><dd className="text-ink">{donation?.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</dd></div>
-            <div className="flex justify-between px-6 py-3"><dt className="text-ink-muted">Acknowledged by</dt><dd className="text-ink">Common Ground Party Accountability Committee</dd></div>
+            <div className="flex justify-between px-6 py-3"><dt className="text-ink-muted">Acknowledged by</dt><dd className="text-ink">Federal Unity Party</dd></div>
           </dl>
         </div>
 
         <div className="mt-4 rounded border border-border bg-surface-2 px-5 py-4 text-xs text-ink-muted">
-          <p>This acknowledgment confirms your contribution. Contributions to the Common Ground Party Accountability Committee are not tax deductible as charitable contributions. Your contribution and required disclosure information are recorded in our public filings. If your total contributions exceed $200 in a calendar year, the Committee is required to collect and report your name, mailing address, occupation, and employer under applicable election law.</p>
+          <p>This acknowledgment confirms your contribution. Contributions to the Federal Unity Party are governed by the Nigerian Electoral Act and INEC regulations. Your contribution and required disclosure information are recorded in our records and reported to the relevant electoral authorities as required.</p>
         </div>
 
         <div className="mt-6">
@@ -50,11 +50,11 @@ export default function DonateReceipt() {
             <button type="button" className="inline-flex items-center border border-border bg-surface px-4 py-2 text-sm font-semibold text-primary hover:bg-surface-2 rounded-sm">Share on social</button>
             <button type="button" className="inline-flex items-center border border-border bg-surface px-4 py-2 text-sm font-semibold text-primary hover:bg-surface-2 rounded-sm">Email a friend</button>
           </div>
-          <div className="mt-2 rounded-sm border border-border bg-surface px-3 py-2 text-sm text-ink-faint">commonground.demo/{name ? name.toLowerCase().replace(/\s+/g, '-') : 'you'}</div>
+          <div className="mt-2 rounded-sm border border-border bg-surface px-3 py-2 text-sm text-ink-faint">fup.ng/{name ? name.toLowerCase().replace(/\s+/g, '-') : 'you'}</div>
         </div>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <Link to="/take-action" className="inline-flex items-center justify-center border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 rounded-sm">Volunteer next</Link>
+          <Link to="/volunteer" className="inline-flex items-center justify-center border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 rounded-sm">Volunteer next</Link>
           <Link to="/" className="inline-flex items-center justify-center bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-hov rounded-sm">Back to homepage</Link>
         </div>
       </section>

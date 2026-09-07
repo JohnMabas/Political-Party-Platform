@@ -110,7 +110,7 @@ export default function SupporterDatabase() {
                   </div>
                 </td>
                 <td className="px-4 py-2.5 text-ink-muted">{fmtDateShort(p.lastContact)}</td>
-                <td className="px-4 py-2.5 font-semibold text-ink">${(p.totalGiven || 0).toLocaleString()}</td>
+                <td className="px-4 py-2.5 font-semibold text-ink">₦{((p.totalGiven || 0)).toLocaleString()}</td>
               </tr>
             ))}
           </tbody>
@@ -134,7 +134,7 @@ export default function SupporterDatabase() {
               <button type="button" onClick={() => setSelected(null)} className="text-sm text-ink-muted hover:text-primary">Close</button>
             </div>
             <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="rounded-sm border border-border bg-surface-2 p-3"><p className="text-xs text-ink-muted">Total given</p><p className="font-semibold text-ink">${p.totalGiven}</p></div>
+              <div className="rounded-sm border border-border bg-surface-2 p-3"><p className="text-xs text-ink-muted">Total given</p><p className="font-semibold text-ink">₦{(p.totalGiven || 0).toLocaleString()}</p></div>
               <div className="rounded-sm border border-border bg-surface-2 p-3"><p className="text-xs text-ink-muted">Doors</p><p className="font-semibold text-ink">{p.doorsKnocked}</p></div>
               <div className="rounded-sm border border-border bg-surface-2 p-3"><p className="text-xs text-ink-muted">Calls</p><p className="font-semibold text-ink">{p.callsMade}</p></div>
               <div className="rounded-sm border border-border bg-surface-2 p-3"><p className="text-xs text-ink-muted">Hours</p><p className="font-semibold text-ink">{p.hours}</p></div>

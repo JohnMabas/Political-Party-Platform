@@ -5,17 +5,17 @@ import { Card } from '../../components/ui'
 import { daysUntil } from '../../utils/format'
 
 const OPTIONS = [
-  { id: 'canvass', icon: '🚪', title: 'Canvassing', body: 'Knock doors with a partner and talk to neighbors. We assign turf and provide a script.' },
-  { id: 'phone', icon: '📞', title: 'Phone banking', body: 'Call supporters and undecided voters from HQ or home.' },
-  { id: 'events', icon: '🗓', title: 'Events & hosting', body: 'Staff an event or host a get-together in your neighborhood.' },
-  { id: 'captain', icon: '📌', title: 'Precinct captain', body: 'Own your precinct and lead your street\u2019s organize effort.' },
+  { id: 'canvass', icon: '🚪', title: 'Canvassing', body: 'Visit homes with a partner and talk to citizens. We assign zones and provide a script.' },
+  { id: 'phone', icon: '📞', title: 'Phone banking', body: 'Call supporters and undecided voters from the office or home.' },
+  { id: 'events', icon: '🗓', title: 'Events & hosting', body: 'Staff an event or host a get-together in your neighbourhood.' },
+  { id: 'captain', icon: '📌', title: 'Ward captain', body: 'Own your ward and lead your area\u2019s organizing effort.' },
 ]
 
 const SHIFTS = [
-  'Riverside canvass — Sat, Sep 19 morning',
-  'Downtown phone bank — Mon, Sep 28 evening',
-  'Copper Creek canvass — Fri, Oct 2 morning',
-  'Volunteer at the GOTV rally — Sun, Nov 1',
+  'Lagos rally support — Sat, Sep 19 morning',
+  'Surulere phone bank — Mon, Sep 28 evening',
+  'Enugu forum volunteers — Fri, Oct 2 morning',
+  'Volunteer at the GOTV rally — Feb 18, 2027',
   'I\u2019ll take whatever needs doing',
 ]
 
@@ -64,7 +64,7 @@ export default function VolunteerSignup() {
           <p className="font-serif text-lg text-white/70 italic">Volunteer</p>
           <h1 className="mt-2 font-serif text-3xl sm:text-4xl font-bold text-white">Put your name on the list</h1>
           <p className="mt-3 max-w-2xl text-white/75">
-            {daysUntil('2026-11-03')} days to go — and there\u2019s a role for your schedule. Tell us who you are and how you want to help.
+            {daysUntil('2027-02-20')} days to go — and there\u2019s a role for your schedule. Tell us who you are and how you want to help.
           </p>
         </div>
       </section>
@@ -84,14 +84,14 @@ export default function VolunteerSignup() {
                   <input id="v-email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
                 </div>
                 <div>
-                  <label htmlFor="v-district" className="mb-1 block text-sm font-medium text-ink">Nearest district (optional)</label>
+                  <label htmlFor="v-district" className="mb-1 block text-sm font-medium text-ink">Nearest LGA / branch (optional)</label>
                   <select id="v-district" value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                    <option value="">Select district</option>
-                    <option>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option>
+                    <option value="">Select an LGA</option>
+                    <option>Lagos Island</option><option>Surulere</option><option>Enugu North</option><option>Kano South</option><option>Port Harcourt</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="v-zip" className="mb-1 block text-sm font-medium text-ink">ZIP code</label>
+                  <label htmlFor="v-zip" className="mb-1 block text-sm font-medium text-ink">State</label>
                   <input id="v-zip" value={form.zip} onChange={(e) => setForm({ ...form, zip: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
                 </div>
               </div>
@@ -127,14 +127,14 @@ export default function VolunteerSignup() {
             <button type="submit" className="w-full inline-flex items-center justify-center bg-accent px-6 py-3 text-base font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">
               Sign me up
             </button>
-            <p className="text-xs text-ink-muted">By signing up you agree to receive text messages from the campaign. Reply STOP anytime. You\u2019ll be asked to confirm your contact details shortly.</p>
+            <p className="text-xs text-ink-muted">By signing up you agree to receive text messages from the party. Reply STOP anytime. You\u2019ll be asked to confirm your contact details shortly.</p>
           </form>
         </div>
 
         <div className="space-y-4">
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">You\u2019ll become volunteer #1483</h2>
-            <p className="mt-2 text-sm text-ink-muted">We\u2019ve onboarded {1482} volunteers this cycle. Each one helps us reach more neighbors.</p>
+            <p className="mt-2 text-sm text-ink-muted">We\u2019ve onboarded {1482} volunteers this cycle. Each one helps us reach more citizens.</p>
           </Card>
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">No experience needed</h2>

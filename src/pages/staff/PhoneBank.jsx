@@ -3,9 +3,9 @@ import { useStore } from '../../store/Store'
 import { Card, StatusBadge } from '../../components/ui'
 
 const CALL_SCRIPT = [
-  { step: '1', line: '"Hi, this is {your first name} — I\u2019m a volunteer with the Common Ground Party. Am I catching you at a good time?"' },
-  { step: '2', line: '"Do you know whether your voter registration is current, and have you made a plan to vote?"' },
-  { step: '3', line: '"If you\u2019re already with us, great — can we count on you this election? Is there any way we can help you get to the polls?"' },
+  { step: '1', line: '"Hello, this is {your first name} — I\u2019m a volunteer with the Federal Unity Party. Am I catching you at a good time?"' },
+  { step: '2', line: '"Do you have your PVC, and have you made a plan to vote in the general election?"' },
+  { step: '3', line: '"If you\u2019re already with us, great — can we count on you this election? Is there any way we can help you get to your polling unit?"' },
   { step: '4', line: '"Thanks so much for your time. Have a great day!" Then log the result below.' },
 ]
 

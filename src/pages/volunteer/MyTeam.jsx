@@ -72,7 +72,7 @@ export default function MyTeam() {
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Chapter news</h2>
             <p className="mt-2 text-sm text-ink-muted">
-              Our chapter meets every other Thursday at the rec center. Add our next canvass on <a href="/events" className="text-primary hover:underline">the events page</a>.
+              Our chapter meets every other Thursday at the ward secretariat. Add our next canvass on <a href="/events" className="text-primary hover:underline">the events page</a>.
             </p>
           </Card>
         </div>

@@ -5,12 +5,12 @@ import { fmtMoney } from '../../utils/format'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, AreaChart, Area, Legend } from 'recharts'
 
 const weeklyFundraising = [
-  { week: 'Aug 3', raised: 11200 },
-  { week: 'Aug 10', raised: 14800 },
-  { week: 'Aug 17', raised: 13900 },
-  { week: 'Aug 24', raised: 17600 },
-  { week: 'Aug 31', raised: 15900 },
-  { week: 'Sep 7', raised: 18400 },
+  { week: 'Aug 3', raised: 8400000 },
+  { week: 'Aug 10', raised: 12600000 },
+  { week: 'Aug 17', raised: 11300000 },
+  { week: 'Aug 24', raised: 15100000 },
+  { week: 'Aug 31', raised: 13800000 },
+  { week: 'Sep 7', raised: 16700000 },
 ]
 
 const doorsSeries = [
@@ -48,7 +48,7 @@ export default function Overview() {
         <Card className="p-4">
           <p className="text-sm text-ink-muted">Fundraising</p>
           <p className="mt-1 font-serif text-2xl font-bold text-primary">{fmtMoney(fundraisingTotal)}</p>
-          <p className="text-xs text-community">{Math.round(progressPct)}% of ${seed.CYCLE_GOAL.toLocaleString()}</p>
+          <p className="text-xs text-community">{Math.round(progressPct)}% of ₦{seed.CYCLE_GOAL.toLocaleString()}</p>
         </Card>
         <Card className="p-4">
           <p className="text-sm text-ink-muted">Active volunteers</p>
@@ -82,9 +82,9 @@ export default function Overview() {
               <BarChart data={weeklyFundraising} margin={{ top: 5, right: 5, left: -10, bottom: 0 }}>
                 <CartesianGrid stroke="#E0DCCF" vertical={false} />
                 <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#5A6270' }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fontSize: 11, fill: '#5A6270' }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
-                <Tooltip formatter={(v) => [`$${Number(v).toLocaleString()}`, 'Raised']} />
-                <Bar dataKey="raised" fill="#C9932F" radius={[2, 2, 0, 0]} />
+                <YAxis tick={{ fontSize: 11, fill: '#5A6270' }} axisLine={false} tickLine={false} tickFormatter={(v) => `₦${(v / 1000000).toFixed(1)}m`} />
+                <Tooltip formatter={(v) => [`₦${Number(v).toLocaleString()}`, 'Raised']} />
+                <Bar dataKey="raised" fill="#C9962E" radius={[2, 2, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

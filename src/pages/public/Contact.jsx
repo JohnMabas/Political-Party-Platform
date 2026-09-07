@@ -19,7 +19,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="container-site py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <section id="contact" className="container-site py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <Card className="p-6">
             <h2 className="font-serif text-lg font-bold text-primary">Send us a message</h2>
@@ -58,15 +58,15 @@ export default function Contact() {
         </div>
         <div className="space-y-4">
           <Card className="p-5">
-            <h2 className="font-serif text-base font-bold text-primary">Headquarters</h2>
+            <h2 className="font-serif text-base font-bold text-primary">National Secretariat</h2>
             <p className="mt-2 text-sm text-ink-muted">
-              210 Union Ave<br />Mill District<br />Open Mon–Sat, 10–8
+              Plot 42, Central Area<br />Abuja, FCT<br />Open Mon–Fri, 9am–5pm
             </p>
           </Card>
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Direct lines</h2>
             <p className="mt-2 text-sm text-ink-muted">
-              General: (555) 010-1100<br />Volunteering: (555) 010-1200<br />Press: (555) 010-2300
+              General: +234 800 000 1100<br />Volunteering: +234 800 000 1200<br />Press: +234 800 000 2300
             </p>
           </Card>
         </div>

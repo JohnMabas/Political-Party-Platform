@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Card } from '../../components/ui'
 
 const openings = [
-  { title: 'Regional Field Organizer', type: 'Full-time', location: 'Mill District HQ', status: 'Open', pays: '$48,000–56,000', blurb: 'Own a region of precincts: recruit, train, and support canvass teams and precinct captains through the cycle.' },
-  { title: 'Digital Organizer', type: 'Full-time', location: 'Remote (in-state)', status: 'Open', pays: '$45,000–52,000', blurb: 'Run the supporter email/SMS, volunteer tools, and online fundraising program with the digital team.' },
-  { title: 'Finance & Compliance Fellow', type: 'Fellowship', location: 'Mill District HQ', status: 'Open', pays: 'Stipend', blurb: 'Learn the craft of campaign finance — recording contributions, preparing disclosures, and meeting filing deadlines.' },
-  { title: 'Phone Bank Captain', type: 'Part-time', location: 'Various', status: 'Open', pays: '$18/hr', blurb: 'Lead phone-bank sessions, coach callers, and keep the dialer and lists moving.' },
-  { title: 'Communications Fellow', type: 'Fellowship', location: 'Remote (in-state)', status: 'Open', pays: 'Stipend', blurb: 'Draft press releases, pitch reporters, and help tell the story of the campaign in plain words.' },
-  { title: 'Data Associate', type: 'Full-time', location: 'Mill District HQ', status: 'Open', pays: '$52,000–60,000', blurb: 'Own the supporter database — lists, targeting, walk lists, and reporting for the whole team.' },
+  { title: 'Regional Field Organizer', type: 'Full-time', location: 'Abuja Secretariat', status: 'Open', pays: '₦9,600,000–11,200,000/yr', blurb: 'Own a region of wards: recruit, train, and support canvass teams and ward captains through the cycle.' },
+  { title: 'Digital Organizer', type: 'Full-time', location: 'Remote (Nigeria)', status: 'Open', pays: '₦9,000,000–10,400,000/yr', blurb: 'Run the supporter email/SMS, volunteer tools, and online fundraising program with the digital team.' },
+  { title: 'Finance & Compliance Fellow', type: 'Fellowship', location: 'Abuja Secretariat', status: 'Open', pays: 'Stipend', blurb: 'Learn the craft of party finance — recording contributions, preparing disclosures, and meeting filing deadlines.' },
+  { title: 'Phone Bank Captain', type: 'Part-time', location: 'Various', status: 'Open', pays: '₦3,600/hr', blurb: 'Lead phone-bank sessions, coach callers, and keep the dialer and lists moving.' },
+  { title: 'Communications Fellow', type: 'Fellowship', location: 'Remote (Nigeria)', status: 'Open', pays: 'Stipend', blurb: 'Draft press releases, pitch reporters, and help tell the story of the party in plain words.' },
+  { title: 'Data Associate', type: 'Full-time', location: 'Abuja Secretariat', status: 'Open', pays: '₦10,400,000–12,000,000/yr', blurb: 'Own the supporter database — lists, targeting, walk lists, and reporting for the whole team.' },
 ]
 
 export default function Careers() {

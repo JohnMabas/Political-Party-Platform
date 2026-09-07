@@ -3,7 +3,7 @@ import { Card, ProgressBar } from '../../components/ui'
 
 export default function Referrals() {
   const { currentUser } = useStore()
-  const myCode = `cgp-${currentUser?.id || 1}`
+  const myCode = `fup-${currentUser?.id || 1}`
 
   // In the demo, count teammates as "referred" so the leaderboard reads real
   const referredCount = 3
@@ -20,7 +20,7 @@ export default function Referrals() {
           <h2 className="font-serif text-lg font-bold text-primary">Your personal link</h2>
           <p className="mt-1 text-sm text-ink-muted">Share this link. When someone signs up through it, they\u2019re credited to you.</p>
           <div className="mt-3 flex flex-col sm:flex-row items-stretch gap-2">
-            <code className="flex-1 rounded-sm border border-border bg-surface-2 px-3 py-2.5 text-sm text-ink-muted break-all">https://commonground.demo/r/{myCode}</code>
+            <code className="flex-1 rounded-sm border border-border bg-surface-2 px-3 py-2.5 text-sm text-ink-muted break-all">https://fup.ng/r/{myCode}</code>
             <button type="button" className="rounded-sm bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-hov">Copy link</button>
           </div>
 
@@ -35,7 +35,7 @@ export default function Referrals() {
             </div>
             <div>
               <p className="text-sm text-ink-muted">Chapter bonus</p>
-              <p className="font-serif text-3xl font-bold text-primary">+$75</p>
+              <p className="font-serif text-3xl font-bold text-primary">+₦7,500</p>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function Referrals() {
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Who you\u2019ve brought in</h2>
             <p className="mt-2 text-sm text-ink-muted">
-              Priya Raman, Hana Sato, and Grace Osei signed up through your link and collectively logged 12 hours this month. Nice work.
+              Ngozi Eze, Fatima Bello, and Grace Okonkwo signed up through your link and collectively logged 12 hours this month. Nice work.
             </p>
           </Card>
         </div>

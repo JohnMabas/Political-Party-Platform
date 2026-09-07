@@ -7,9 +7,9 @@ function Seal({ className = 'w-10 h-10' }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden="true" fill="none">
       <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="2.5" />
-      <circle cx="24" cy="24" r="7.5" stroke="currentColor" strokeWidth="2" />
-      <path d="M24 6v6M24 36v6M6 24h6M36 24h6M10.3 10.3l4.2 4.2M33.5 33.5l4.2 4.2M37.7 10.3l-4.2 4.2M14.5 33.5l-4.2 4.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="24" cy="24" r="2.5" fill="currentColor" />
+      <circle cx="24" cy="24" r="15" stroke="currentColor" strokeWidth="1.5" opacity="0.55" />
+      <path d="M13 33 C19 30 28 19 33 12 L37 15 C32 22 24 31 16 35 Z" fill="currentColor" />
+      <line x1="16" y1="35" x2="13" y2="38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }
@@ -18,29 +18,28 @@ export function PublicHeader() {
   const { currentUser } = useStore()
   const [open, setOpen] = useState(false)
   const nav = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
     { to: '/platform', label: 'Our Platform' },
     { to: '/candidates', label: 'Candidates' },
-    { to: '/take-action', label: 'Take Action' },
     { to: '/events', label: 'Events' },
     { to: '/news', label: 'News' },
-    { to: '/donate', label: 'Donate' },
-    { to: '/about', label: 'Our Story' },
   ]
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface">
       <div className="container-site">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2.5 text-primary" aria-label="Common Ground Party home">
+          <Link to="/" className="flex items-center gap-2.5 text-primary" aria-label="Federal Unity Party home">
             <Seal className="w-9 h-9" />
             <span className="flex flex-col leading-tight">
-              <span className="font-serif text-lg font-bold text-primary">Common Ground Party</span>
-              <span className="text-[0.65rem] uppercase tracking-widest text-ink-muted">Building together</span>
+              <span className="font-serif text-lg font-bold text-primary">Federal Unity Party</span>
+              <span className="text-[0.65rem] uppercase tracking-widest text-ink-muted">One Nigeria · Progress together</span>
             </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-5" aria-label="Primary">
-            {nav.slice(0, -1).map((n) => (
+            {nav.map((n) => (
               <NavLink key={n.to} to={n.to} className={({ isActive }) =>
                 `text-sm font-medium transition-colors hover:text-primary-hov ${isActive ? 'text-primary underline decoration-accent decoration-2 underline-offset-4' : 'text-ink-muted'}`}>
                 {n.label}
@@ -49,11 +48,8 @@ export function PublicHeader() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/volunteer" className="text-sm font-semibold text-primary hover:underline underline-offset-4">
-              Volunteer
-            </Link>
-            <Link to="/donate" className="inline-flex items-center gap-1.5 bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-              Donate
+            <Link to="/volunteer" className="inline-flex items-center gap-1.5 bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+              Get involved
             </Link>
             {currentUser && currentUser.role !== 'visitor' && (
               <Link to={currentUser.role === 'staff' || currentUser.role === 'admin' ? '/staff' : '/portal'}
@@ -83,7 +79,7 @@ export function PublicHeader() {
             ))}
             <div className="mt-2 flex gap-3 border-t border-border pt-3 px-2">
               <Link to="/volunteer" onClick={() => setOpen(false)} className="flex-1 text-center border border-primary text-primary px-4 py-2 text-sm font-semibold rounded-sm">Volunteer</Link>
-              <Link to="/donate" onClick={() => setOpen(false)} className="flex-1 text-center bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] rounded-sm">Donate</Link>
+              <Link to="/join" onClick={() => setOpen(false)} className="flex-1 text-center bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] rounded-sm">Join us</Link>
             </div>
           </nav>
         )}
@@ -93,15 +89,15 @@ export function PublicHeader() {
 }
 
 export function CountdownStrip({ kind = 'election' }) {
-  const days = daysUntil('2026-11-03')
+  const days = daysUntil('2027-02-20')
   return (
     <div className="border-b border-border bg-urgent-tint">
       <div className="container-site flex items-center justify-center gap-2 py-2 text-center text-sm">
         <span aria-hidden="true" className="text-urgent">◷</span>
         {kind === 'election' ? (
           <p className="text-ink">
-            <strong className="text-urgent">{days} days until Election Day.</strong>{' '}
-            <Link to="/take-action" className="underline underline-offset-2 text-primary font-medium">Find a way to help</Link>
+            <strong className="text-urgent">{days} days until the general election.</strong>{' '}
+            <Link to="/volunteer" className="underline underline-offset-2 text-primary font-medium">Find a way to help</Link>
           </p>
         ) : (
           <p className="text-ink"><strong className="text-urgent">Town hall this Thursday.</strong> <Link to="/events" className="underline underline-offset-2 text-primary font-medium">RSVP now</Link></p>
@@ -119,13 +115,13 @@ export function Footer() {
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-2.5 text-primary">
               <Seal className="w-8 h-8" />
-              <span className="font-serif font-bold text-lg">Common Ground Party</span>
+              <span className="font-serif font-bold text-lg">Federal Unity Party</span>
             </div>
             <p className="mt-3 max-w-sm text-sm text-ink-muted">
-              A people-powered party building a community where everyone can get ahead and belong. Organized by neighbors, precincts, and chapters across the district.
+              A people-powered Nigerian party building a united, prosperous, and well-governed nation. Organized by citizens, branches, and chapters across all 36 states and the FCT.
             </p>
             <p className="mt-4 text-xs text-ink-muted">
-              Paid for by the Common Ground Party Committee and not authorized by any candidate or candidate\u2019s committee. com. This platform is a demonstration template.
+              Paid for by the Federal Unity Party and not authorized by any candidate or candidate\u2019s committee. This platform is a demonstration template.
             </p>
           </div>
           <div>
@@ -133,14 +129,13 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-ink-muted">
               <li><Link to="/volunteer" className="hover:text-primary">Volunteer</Link></li>
               <li><Link to="/events" className="hover:text-primary">Events</Link></li>
-              <li><Link to="/donate" className="hover:text-primary">Donate</Link></li>
               <li><Link to="/join" className="hover:text-primary">Become a member</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-primary">Party</h3>
             <ul className="mt-3 space-y-2 text-sm text-ink-muted">
-              <li><Link to="/about" className="hover:text-primary">Our Story</Link></li>
+              <li><Link to="/about" className="hover:text-primary">About Us</Link></li>
               <li><Link to="/platform" className="hover:text-primary">Platform</Link></li>
               <li><Link to="/candidates" className="hover:text-primary">Candidates</Link></li>
               <li><Link to="/endorsements" className="hover:text-primary">Endorsements</Link></li>
@@ -159,7 +154,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t border-border pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-muted">
-          <p>&copy; {new Date().getFullYear()} Common Ground Party. All rights reserved. Common Ground is a fictional demonstration organization.</p>
+          <p>&copy; {new Date().getFullYear()} Federal Unity Party. All rights reserved. FUP is a fictional demonstration organization.</p>
           <div className="flex gap-4">
             <Link to="/compliance" className="hover:text-primary">Privacy policy</Link>
             <Link to="/compliance" className="hover:text-primary">Terms of use</Link>

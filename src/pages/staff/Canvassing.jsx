@@ -3,10 +3,10 @@ import { useStore } from '../../store/Store'
 import { Card, StatusBadge, Avatar } from '../../components/ui'
 
 const TURFS = [
-  { id: 1, name: 'Riverside — Elm St & 2nd Ave', address: '400–700 block of Elm St', assignedTo: 1, size: 42 },
-  { id: 2, name: 'Riverside — Maple & 5th', address: '100–300 block of Maple Ave', assignedTo: 7, size: 38 },
-  { id: 3, name: 'Downtown — Union corridor', address: 'Union Ave, 200–500 block', assignedTo: null, size: 51 },
-  { id: 4, name: 'Central — Depot & Mill', address: 'Depot St & Mill St', assignedTo: null, size: 33 },
+  { id: 1, name: 'Lagos Island — Marina & Broad St', address: 'Zone 4, Marina ward', assignedTo: 1, size: 42 },
+  { id: 2, name: 'Surulere — Adeniran Ogunsanya', address: 'Zone 2, Surulere ward', assignedTo: 7, size: 38 },
+  { id: 3, name: 'Ikeja — Obafemi Awolowo Way', address: 'Zone 3, Ikeja ward', assignedTo: null, size: 51 },
+  { id: 4, name: 'Kano South — Dala Rd', address: 'Zone 1, Dala ward', assignedTo: null, size: 33 },
 ]
 
 const RESULTS = ['Supporter', 'Undecided', 'Opposed', 'Not home', 'Refused']

@@ -6,16 +6,16 @@
   --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Work Sans Variable", system-ui, sans-serif;
 
-  --color-bg: #FAF8F3;
+  --color-bg: #F7F6F1;
   --color-surface: #FFFFFF;
-  --color-surface-2: #F0EDE4;
+  --color-surface-2: #EFEDE3;
   --color-border: #E0DCCF;
 
-  --color-primary: #1F3A5F;
-  --color-primary-hov: #17293F;
-  --color-primary-tint: #DFE6EE;
+  --color-primary: #1B5E3F;
+  --color-primary-hov: #154A32;
+  --color-primary-tint: #D6E8DE;
 
-  --color-accent: #C9932F;
+  --color-accent: #C9962E;
   --color-accent-tint: #F3E5C4;
 
   --color-community: #4B7A57;

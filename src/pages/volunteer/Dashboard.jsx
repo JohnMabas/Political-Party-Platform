@@ -34,7 +34,7 @@ export default function Dashboard() {
         </Card>
         <Card className="p-4">
           <p className="text-sm text-ink-muted">My total giving</p>
-          <p className="mt-1 font-serif text-3xl font-bold text-primary">{myDonationsTotal.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}</p>
+          <p className="mt-1 font-serif text-3xl font-bold text-primary">₦{myDonationsTotal.toLocaleString('en-NG')}</p>
         </Card>
       </div>
 
@@ -102,7 +102,7 @@ export default function Dashboard() {
             <h2 className="font-serif text-base font-bold text-primary">Share with friends</h2>
             <p className="mt-1 text-sm text-ink-muted">Your personal referral link: bring a friend, and when they volunteer you both get a nod from your chapter.</p>
             <div className="mt-2 flex items-center gap-2">
-              <code className="flex-1 truncate rounded-sm border border-border bg-surface-2 px-2 py-1.5 text-xs text-ink-muted">commonground.demo/r/{currentUser?.id || 1}</code>
+              <code className="flex-1 truncate rounded-sm border border-border bg-surface-2 px-2 py-1.5 text-xs text-ink-muted">fup.ng/r/{currentUser?.id || 1}</code>
               <button type="button" className="rounded-sm bg-primary px-3 py-1.5 text-xs font-semibold text-white hover:bg-primary-hov">Copy</button>
             </div>
             <Link to="/portal/referrals" className="mt-3 inline-block text-sm font-semibold text-accent hover:underline">Track referrals →</Link>

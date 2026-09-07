@@ -49,8 +49,8 @@ export function Thermometer({ current, goal, label, className = '', accent = tru
         <div className="mb-1.5 flex items-baseline justify-between gap-2 text-sm">
           <span className="font-medium text-ink">{label}</span>
           <span className="tabular-nums text-ink-muted">
-            <span className={accent ? 'text-accent font-semibold' : 'text-primary font-semibold'}>{current.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}</span>
-            {' of '}{goal.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}
+            <span className={accent ? 'text-accent font-semibold' : 'text-primary font-semibold'}>₦{current.toLocaleString('en-NG')}</span>
+            {' of '}₦{goal.toLocaleString('en-NG')}
           </span>
         </div>
       )}

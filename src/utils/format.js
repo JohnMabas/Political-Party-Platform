@@ -1,9 +1,9 @@
 export function fmtMoney(n) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
+  return '₦' + new Intl.NumberFormat('en-NG', { maximumFractionDigits: 0 }).format(n)
 }
 
 export function fmtMoneyCents(n) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n)
+  return '₦' + new Intl.NumberFormat('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n)
 }
 
 export function daysUntil(dateStr) {

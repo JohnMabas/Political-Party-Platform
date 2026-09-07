@@ -6,14 +6,14 @@ export default function Platform() {
   const { seed } = useStore()
   return (
     <div>
-      <section className="border-b border-border" style={{ background: 'linear-gradient(180deg, #1F3A5F 0%, #17293F 100%)' }}>
+      <section className="border-b border-border" style={{ background: 'linear-gradient(180deg, #1B5E3F 0%, #154A32 100%)' }}>
         <div className="container-site py-12">
           <p className="font-serif text-lg text-white/80 italic">Our platform</p>
           <h1 className="mt-2 max-w-3xl font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
             What we stand for, in plain language.
           </h1>
           <p className="mt-4 max-w-2xl text-white/75">
-            This is the platform we organize around and the standard we hold every Common Ground candidate to. Written to be read at a kitchen table, debated in a chapter meeting, and adapted for your community.
+            This is the platform we organize around and the standard we hold every Federal Unity candidate to. Written to be read at a kitchen table, debated at a branch meeting, and adapted for your community.
           </p>
         </div>
       </section>

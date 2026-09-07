@@ -82,11 +82,11 @@ export default function ComplianceReporting() {
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Expenditures</h2>
             <ul className="mt-3 divide-y divide-border text-sm">
-              <li className="py-2 flex justify-between"><span className="text-ink-muted">Field materials & signage</span><span className="font-medium">$12,400</span></li>
-              <li className="py-2 flex justify-between"><span className="text-ink-muted">Phone & dialer</span><span className="font-medium">$6,800</span></li>
-              <li className="py-2 flex justify-between"><span className="text-ink-muted">Events & venues</span><span className="font-medium">$9,100</span></li>
-              <li className="py-2 flex justify-between"><span className="text-ink-muted">Mail & digital</span><span className="font-medium">$18,700</span></li>
-              <li className="py-2 flex justify-between border-t-2 border-border"><span className="font-medium text-ink">Total to date</span><span className="font-semibold">$47,000</span></li>
+              <li className="py-2 flex justify-between"><span className="text-ink-muted">Field materials & signage</span><span className="font-medium">₦1,240,000</span></li>
+              <li className="py-2 flex justify-between"><span className="text-ink-muted">Phone & dialer</span><span className="font-medium">₦680,000</span></li>
+              <li className="py-2 flex justify-between"><span className="text-ink-muted">Events & venues</span><span className="font-medium">₦910,000</span></li>
+              <li className="py-2 flex justify-between"><span className="text-ink-muted">Media & digital</span><span className="font-medium">₦1,870,000</span></li>
+              <li className="py-2 flex justify-between border-t-2 border-border"><span className="font-medium text-ink">Total to date</span><span className="font-semibold">₦4,700,000</span></li>
             </ul>
           </Card>
           <Card className="p-5">

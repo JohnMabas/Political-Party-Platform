@@ -1,35 +1,35 @@
 import { Link } from 'react-router-dom'
 
 const values = [
-  { title: 'Equity and opportunity', body: 'We measure our success by whether the people who have the least are getting more of what everyone needs — decent work, a safe home, and care when they\u2019re sick.' },
-  { title: 'Local knowledge', body: 'Neighbors know their streets better than consultants do. We put decisions and organizing power in local chapters and precincts, not just a headquarters downtown.' },
-  { title: 'Honest money', body: 'We fund the work with small-dollar donations from people, not big-money special interests. Your contribution is a statement about who you want this party to answer to.' },
-  { title: 'Relentless follow-through', body: 'Campaigns end on Election Day; governing begins. We hold ourselves to the same standard of follow-through we ask of every elected official we support.' },
+  { title: 'National unity and equity', body: 'We measure our success by whether every region and every citizen — from Lagos to Kano to Enugu — gets a fair share of opportunity, security, and good governance.' },
+  { title: 'Local knowledge', body: 'Communities know their own needs better than anyone in Abuja. We put decision-making and organizing power in local branches and wards, not just a headquarters.' },
+  { title: 'Honest money', body: 'We fund the work with contributions from ordinary Nigerians, not vested interests. Every naira raised is spent transparently and accounted for.' },
+  { title: 'Relentless follow-through', body: 'Elections end on Election Day; governing begins. We hold ourselves to the same standard of follow-through we ask of every elected official we support.' },
 ]
 
 const leadership = [
-  { name: 'Camille North', role: 'Campaign Manager', initials: 'CN', blurb: 'A decade of nonprofit and field organizing, now steering the statewide operation.' },
-  { name: 'Derek Alvarez', role: 'Finance Director', initials: 'DA', blurb: 'Keeps the books honest and the payroll funded — and every receipt public.' },
-  { name: 'Ruth Bello', role: 'Party Chair', initials: 'RB', blurb: 'A longtime community organizer who co-founded the party in a living room in 2021.' },
-  { name: 'Omar Idris', role: 'Communications Director', initials: 'OI', blurb: 'Tells the story of the work in plain words, from town halls to press releases.' },
+  { name: 'Adaeze Okonkwo', role: 'National Campaign Manager', initials: 'AO', blurb: 'A decade of civil-society and field organizing, now steering the nationwide operation.' },
+  { name: 'Emeka Nwankwo', role: 'Finance Director', initials: 'EN', blurb: 'Keeps the books honest, the payroll funded, and every receipt public.' },
+  { name: 'Hajiya Aisha Bello', role: 'Party National Chair', initials: 'AB', blurb: 'A longtime community organizer who co-founded the party on the principle of unity.' },
+  { name: 'Tunde Adeleke', role: 'Communications Director', initials: 'TA', blurb: 'Tells the story of the work in plain words, from town halls to press releases.' },
 ]
 
 const milestones = [
-  { year: '2021', text: 'Twelve neighbors meet in a living room to start a party built on local chapters.' },
-  { year: '2022', text: 'Our first slate of local candidates; a hundred members grow into two thousand.' },
-  { year: '2023', text: 'We publish a written platform and open our first headquarters in the Mill District.' },
-  { year: '2025', text: 'Membership passes 40,000. Chapters open in all corners of the state.' },
-  { year: '2026', text: 'A full slate of candidates runs on the Common Ground line for the first time.' },
+  { year: '2021', text: 'A small group of citizens from across Nigeria meet to build a party founded on unity and transparency.' },
+  { year: '2022', text: 'Our first slate of local candidates; branches open in several states.' },
+  { year: '2023', text: 'We publish a written national platform and open our secretariat in the FCT.' },
+  { year: '2025', text: 'Membership passes 100,000. Branches open in all 36 states.' },
+  { year: '2026', text: 'A full slate of candidates runs on the Federal Unity line for the first time.' },
 ]
 
 export default function About() {
   return (
     <div>
-      <section className="border-b border-border" style={{ background: 'linear-gradient(180deg, #1F3A5F 0%, #17293F 100%)' }}>
+      <section className="border-b border-border" style={{ background: 'linear-gradient(180deg, #1B5E3F 0%, #154A32 100%)' }}>
         <div className="container-site py-14 sm:py-16">
           <p className="font-serif text-lg text-white/80 italic">Our story</p>
           <h1 className="mt-2 max-w-3xl font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-            We started with a simple question, in a living room, with coffee and twelve neighbors.
+            We started with a simple question, around a table, with citizens from every region.
           </h1>
         </div>
       </section>
@@ -37,16 +37,16 @@ export default function About() {
       <section className="container-site py-12 max-w-3xl">
         <div className="space-y-5 font-serif text-lg leading-relaxed text-ink">
           <p>
-            In the winter of 2021, twelve neighbors gathered in a rented living room to ask why the parties they\u2019d grown up with kept losing touch with the people they were supposed to serve — and what a party built differently might look like.
+            In 2021, a group of concerned citizens gathered to ask why politics so often divided Nigerians — and what a party built on unity, service, and transparency might look like.
           </p>
           <p>
-            There was no consultant in the room and no donor list. There was a pot of coffee, a flip chart, and a shared belief that a political organization could be held to the same standards of honesty and follow-through that communities already hold each other to. We decided to build one.
+            There was no patron in the room and no vested interest. A shared belief that a political organization could serve the people with honesty and follow-through drove us to build one.
           </p>
           <p>
-            The Common Ground Party grew one precinct at a time. We held meetings in church basements and union halls, on front porches and in rec-center gyms. We wrote our platform first, then recruited candidates who would commit to it, then raised the money to run — from members who gave an average of about $40.
+            The Federal Unity Party grew one ward at a time. We held meetings in town halls, church and mosque grounds, market squares, and community centres. We wrote our platform first, then recruited candidates who would commit to it, then raised the money to run — from ordinary Nigerians who gave what they could.
           </p>
           <p>
-            Five years later we count tens of thousands of members, a full slate of candidates, and a campaign that is organized and funded by the people it serves. The living room is gone. The principle is not: this party answers to its neighbors.
+            Five years later we count members in all 36 states and the FCT, a full slate of candidates, and a movement organized and funded by the people it serves. The original table is gone. The principle is not: this party answers to the Nigerian people.
           </p>
         </div>
       </section>

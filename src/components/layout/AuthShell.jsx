@@ -13,17 +13,6 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
   const [accountOpen, setAccountOpen] = useState(false)
   const navigate = useNavigate()
 
-  const switchRole = (role) => {
-    const map = {
-      visitor: { role: 'visitor', name: 'Guest' },
-      volunteer: { id: 1, role: 'volunteer', name: 'Amina Yusuf', email: 'amina.yusuf@example.com' },
-      organizer: { id: 3, role: 'organizer', name: 'Alicia Tran', email: 'alicia@commonground.party' },
-      admin: { id: 1, role: 'admin', name: 'Camille North', email: 'camille@commonground.party' },
-    }
-    setCurrentUser(map[role])
-    navigate(role === 'volunteer' ? '/portal' : '/staff')
-  }
-
   return (
     <div className="min-h-screen flex bg-bg">
       {/* Sidebar */}
@@ -33,7 +22,7 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
             className="rounded-sm p-1.5 text-primary hover:bg-surace-2">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
-          {!collapsed && <Link to="/" className="font-serif font-bold text-primary text-lg truncate">Common Ground</Link>}
+          {!collapsed && <Link to="/" className="font-serif font-bold text-primary text-lg truncate">Federal Unity</Link>}
         </div>
         <nav className="flex-1 overflow-y-auto py-4 px-2 space-y-1" aria-label="Dashboard navigation">
           {nav.map((item) => (
@@ -112,10 +101,6 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
                   <p className="text-sm font-semibold text-ink">{currentUser?.name || 'Guest'}</p>
                   <p className="text-xs text-ink-muted">{currentUser?.role === 'volunteer' ? 'Supporter / Volunteer' : currentUser?.role === 'admin' ? 'Staff / Admin' : currentUser?.role || 'Visitor'}</p>
                 </div>
-                <button type="button" onClick={() => { switchRole('volunteer'); setAccountOpen(false) }}
-                  className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Volunteer portal</button>
-                <button type="button" onClick={() => { switchRole('organizer'); setAccountOpen(false) }}
-                  className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Staff dashboard</button>
                 <div className="border-t border-border mt-1 pt-1">
                   <button type="button" onClick={() => { setCurrentUser({ role: 'visitor', name: 'Guest' }); navigate('/'); setAccountOpen(false) }}
                     className="w-full text-left rounded-sm px-3 py-2 text-sm text-ink-muted hover:bg-surface-2 hover:text-primary">Return to public site</button>
@@ -141,29 +126,6 @@ export function AuthShell({ nav, brand: _brand, userRole, children, topRight }) 
           <div className="mx-auto w-full max-w-6xl">{children}</div>
         </main>
       </div>
-    </div>
-  )
-}
-
-// Dev-mode role switcher (demo without real auth)
-export function RoleSwitcher() {
-  const { currentUser, setCurrentUser } = useStore()
-  const navigate = useNavigate()
-  const roles = [
-    { role: 'visitor', label: 'Visitor / Public' },
-    { role: 'volunteer', label: 'Volunteer Portal' },
-    { role: 'organizer', label: 'Field Organizer' },
-    { role: 'admin', label: 'Staff / Admin' },
-  ]
-  return (
-    <div className="fixed bottom-3 right-3 z-50 flex items-center gap-1 rounded-full border border-border bg-surface px-2 py-1 shadow-md">
-      <span className="px-1 text-[0.65rem] font-semibold uppercase tracking-wide text-ink-faint">Demo:</span>
-      {roles.map((r) => (
-        <button key={r.role} type="button" onClick={() => { setCurrentUser(r.role === 'visitor' ? { role: 'visitor', name: 'Guest' } : r.role === 'volunteer' ? { id: 1, role: 'volunteer', name: 'Amina Yusuf', email: 'amina.yusuf@example.com' } : r.role === 'organizer' ? { id: 3, role: 'organizer', name: 'Alicia Tran' } : { id: 1, role: 'admin', name: 'Camille North' }); navigate(r.role === 'volunteer' ? '/portal' : r.role === 'organizer' || r.role === 'admin' ? '/staff' : '/') }}
-          className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${currentUser?.role === r.role ? 'bg-primary text-white' : 'text-ink-muted hover:text-primary'}`}>
-          {r.label}
-        </button>
-      ))}
     </div>
   )
 }

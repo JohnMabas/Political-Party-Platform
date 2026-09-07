@@ -5,7 +5,7 @@ import { Card, Avatar } from '../../components/ui'
 export default function Settings() {
   const { currentUser, setCurrentUser, peopleData } = useStore()
   const me = peopleData.find((p) => p.id === currentUser?.id)
-  const [form, setForm] = useState({ name: me?.name || currentUser?.name, email: me?.email || currentUser?.email, phone: '555-010-7788', district: me?.district || 'D5' })
+  const [form, setForm] = useState({ name: me?.name || currentUser?.name, email: me?.email || currentUser?.email, phone: '+234 800 000 7788', district: me?.district || 'Ward 5' })
   const [prefs, setPrefs] = useState({ email: true, sms: true, digest: 'weekly' })
   const [saved, setSaved] = useState(false)
 
@@ -47,9 +47,9 @@ export default function Settings() {
                 <input id="s-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
               </div>
               <div>
-                <label htmlFor="s-district" className="mb-1 block text-sm font-medium text-ink">Nearest district</label>
+                <label htmlFor="s-district" className="mb-1 block text-sm font-medium text-ink">Nearest ward</label>
                 <select id="s-district" value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                  <option>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option>
+                  <option>Ward 1</option><option>Ward 2</option><option>Ward 3</option><option>Ward 4</option><option>Ward 5</option>
                 </select>
               </div>
             </div>

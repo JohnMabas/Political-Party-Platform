@@ -11,7 +11,7 @@ export default function VolunteerManagement() {
   const activeSum = active.reduce((s, p) => s + p.hours, 0)
 
   const assign = (person) => {
-    assignShift(person.id, { title: 'Riverside canvass — Elm & 2nd', type: 'canvass', date: '2026-09-19' })
+    assignShift(person.id, { title: 'Lagos Island canvass — Marina & Broad', type: 'canvass', date: '2026-09-19' })
   }
 
   return (

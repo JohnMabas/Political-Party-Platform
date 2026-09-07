@@ -1,9 +1,8 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { StoreProvider } from './store/Store'
 import { PublicLayout } from './layouts/PublicLayout'
 import { AuthLayout } from './layouts/AuthLayout'
-import { RoleSwitcher } from './components/layout/AuthShell'
 
 const Home = lazy(() => import('./pages/public/Home'))
 const About = lazy(() => import('./pages/public/About'))
@@ -11,7 +10,6 @@ const Platform = lazy(() => import('./pages/public/Platform'))
 const IssueDetail = lazy(() => import('./pages/public/IssueDetail'))
 const CandidatesIndex = lazy(() => import('./pages/public/CandidatesIndex'))
 const CandidateProfile = lazy(() => import('./pages/public/CandidateProfile'))
-const TakeAction = lazy(() => import('./pages/public/TakeAction'))
 const EventsIndex = lazy(() => import('./pages/public/EventsIndex'))
 const EventDetail = lazy(() => import('./pages/public/EventDetail'))
 const NewsIndex = lazy(() => import('./pages/public/NewsIndex'))
@@ -76,7 +74,7 @@ export default function App() {
             <Route path="/platform/:slug" element={<IssueDetail />} />
             <Route path="/candidates" element={<CandidatesIndex />} />
             <Route path="/candidates/:slug" element={<CandidateProfile />} />
-            <Route path="/take-action" element={<TakeAction />} />
+            <Route path="/take-action" element={<Navigate to="/volunteer" replace />} />
             <Route path="/volunteer" element={<VolunteerSignup />} />
             <Route path="/events" element={<EventsIndex />} />
             <Route path="/events/:id" element={<EventDetail />} />
@@ -120,7 +118,6 @@ export default function App() {
           </Route>
         </Routes>
         </Suspense>
-        <RoleSwitcher />
       </BrowserRouter>
     </StoreProvider>
   )

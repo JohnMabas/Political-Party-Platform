@@ -55,11 +55,11 @@ export default function IssueDetail() {
         <div className="mt-8 rounded border border-border bg-surface p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h2 className="font-serif text-lg font-bold text-primary">Ready to act on this issue?</h2>
-            <p className="text-sm text-ink-muted mt-1">Volunteer on a canvass near you or make a contribution that keeps the work going.</p>
+            <p className="text-sm text-ink-muted mt-1">Volunteer on a canvass near you and help turn this position into change.</p>
           </div>
           <div className="flex gap-3">
-            <Link to="/volunteer" className="inline-flex items-center border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/5 rounded-sm">Volunteer</Link>
-            <Link to="/donate" className="inline-flex items-center bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Donate</Link>
+            <Link to="/volunteer" className="inline-flex items-center bg-accent px-4 py-2 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Volunteer</Link>
+            <Link to="/volunteer" className="inline-flex items-center border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/5 rounded-sm">Get involved</Link>
           </div>
         </div>
       </section>

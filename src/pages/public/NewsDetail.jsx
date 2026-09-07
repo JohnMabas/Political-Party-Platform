@@ -32,7 +32,7 @@ export default function NewsDetail() {
         </div>
         <div className="mt-10 border-t border-border pt-6 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
           <p className="text-xs text-ink-muted">For media inquiries, contact the <Link to="/contact" className="text-primary hover:underline">press office</Link>.</p>
-          <Link to="/donate" className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Support the work</Link>
+          <Link to="/volunteer" className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">Get involved</Link>
         </div>
       </section>
     </div>

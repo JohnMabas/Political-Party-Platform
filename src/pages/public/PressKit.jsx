@@ -40,9 +40,9 @@ export default function PressKit() {
         <div className="space-y-4">
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Media contact</h2>
-            <p className="mt-2 text-sm text-ink-muted">Omar Idris, Communications Director</p>
-            <p className="text-sm text-ink-muted">press@commonground.demo</p>
-            <p className="text-sm text-ink-muted">(555) 010-2300</p>
+            <p className="mt-2 text-sm text-ink-muted">Tunde Adeleke, Communications Director</p>
+            <p className="text-sm text-ink-muted">press@fup.ng</p>
+            <p className="text-sm text-ink-muted">+234 800 000 2300</p>
             <Link to="/contact" className="mt-3 inline-block text-sm font-semibold text-accent hover:underline">Send a request</Link>
           </Card>
           <Card className="p-5">

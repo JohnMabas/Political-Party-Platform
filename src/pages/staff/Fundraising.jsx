@@ -3,16 +3,16 @@ import { Card, StatusBadge, Thermometer, ProgressBar } from '../../components/ui
 import { fmtDateShort, fmtMoney } from '../../utils/format'
 
 const FUND_GOALS = {
-  'General Campaign Fund': 140000,
-  'Volunteer Fund': 40000,
-  'Events Fund': 30000,
-  'Media Fund': 40000,
+  'General Campaign Fund': 29000000,
+  'Volunteer Fund': 5000000,
+  'Events Fund': 6000000,
+  'Media Fund': 10000000,
 }
 
 const PLEDGES = [
-  { id: 1, name: 'Sam Kowalski', amount: 500, due: '2026-09-30', status: 'Pledged' },
-  { id: 2, name: 'Hana Sato', amount: 150, due: '2026-10-05', status: 'Pledged' },
-  { id: 3, name: 'Elena Petrova', amount: 240, due: '2026-09-18', status: 'Pledged' },
+  { id: 1, name: 'Yakubu Garba', amount: 150000, due: '2026-09-30', status: 'Pledged' },
+  { id: 2, name: 'Fatima Bello', amount: 76000, due: '2026-10-05', status: 'Pledged' },
+  { id: 3, name: 'Chiamaka Okafor', amount: 96000, due: '2026-09-18', status: 'Pledged' },
 ]
 
 export default function Fundraising() {

@@ -7,7 +7,7 @@ export default function Join() {
   const { volunteerSignup, setCurrentUser } = useStore()
   const navigate = useNavigate()
   const [form, setForm] = useState({ name: '', email: '', district: '' })
-  const [dues, setDues] = useState(20)
+  const [dues, setDues] = useState(2000)
   const [done, setDone] = useState(false)
 
   const submit = (e) => {
@@ -23,7 +23,7 @@ export default function Join() {
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-community-tint text-3xl text-community" aria-hidden="true">✓</div>
         <h1 className="mt-4 font-serif text-3xl font-bold text-primary">Welcome to the party</h1>
         <p className="mt-3 text-ink-muted">
-          You\u2019re now a member. You\u2019ll get a welcome note from your local chapter and a chance to vote in party business.
+          You\u2019re now a member. You\u2019ll get a welcome note from your local branch and a chance to vote in party business.
         </p>
         <div className="mt-8 flex justify-center gap-3">
           <button type="button" onClick={() => navigate('/portal')} className="inline-flex items-center justify-center bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-hov rounded-sm">Open my portal</button>
@@ -39,7 +39,7 @@ export default function Join() {
           <p className="font-serif text-lg text-white/70 italic">Membership</p>
           <h1 className="mt-2 font-serif text-3xl sm:text-4xl font-bold text-white">Become a member</h1>
           <p className="mt-3 max-w-2xl text-white/75">
-            Membership is different from volunteering — it gives you a vote in party business and a stake in how we\u2019re run. It\u2019s $20 a year, or whatever you can afford.
+            Membership is different from volunteering — it gives you a voice in party business and a stake in how we\u2019re run. It\u2019s ₦2,000 a year, or whatever you can afford.
           </p>
         </div>
       </section>
@@ -58,23 +58,23 @@ export default function Join() {
                 <input id="m-email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
               </div>
               <div>
-                <label htmlFor="m-district" className="mb-1 block text-sm font-medium text-ink">Nearest district / chapter</label>
+                <label htmlFor="m-district" className="mb-1 block text-sm font-medium text-ink">Nearest LGA / branch</label>
                 <select id="m-district" value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
                   <option value="">Select</option>
-                  <option>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option>
+                  <option>Lagos Island</option><option>Surulere</option><option>Enugu North</option><option>Kano South</option><option>Port Harcourt</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="m-dues" className="mb-1 block text-sm font-medium text-ink">Annual dues</label>
                 <select id="m-dues" value={dues} onChange={(e) => setDues(Number(e.target.value))} className="w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                  <option value={20}>$20 — standard</option>
-                  <option value={5}>$5 — reduced</option>
-                  <option value={60}>$60 — sustaining</option>
-                  <option value={0}>$0 — no one turned away</option>
+                  <option value={2000}>₦2,000 — standard</option>
+                  <option value={500}>₦500 — reduced</option>
+                  <option value={20000}>₦20,000 — sustaining</option>
+                  <option value={0}>₦0 — no one turned away</option>
                 </select>
               </div>
               <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center bg-accent px-6 py-3 text-sm font-semibold text-[#1C2430] hover:bg-accent/90 rounded-sm">
-                Become a member{dues > 0 ? ` — $${dues}/yr` : ''}
+                Become a member{dues > 0 ? ` — ₦${dues.toLocaleString()}/yr` : ''}
               </button>
             </form>
           </Card>
@@ -83,8 +83,8 @@ export default function Join() {
           <Card className="p-5">
             <h2 className="font-serif text-base font-bold text-primary">Member benefits</h2>
             <ul className="mt-3 space-y-2 text-sm text-ink-muted">
-              <li>• A vote in party business and candidate nominations.</li>
-              <li>• A voice in your local chapter\u2019s priorities.</li>
+              <li>• A voice in party business and candidate nominations.</li>
+              <li>• A voice in your local branch\u2019s priorities.</li>
               <li>• Access to the supporter portal and volunteer tools.</li>
               <li>• A member card and welcome packet.</li>
             </ul>
